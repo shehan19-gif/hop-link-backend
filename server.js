@@ -35,7 +35,8 @@ app.use(cors({
 
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    serverApi: { version: '1', strict: true, deprecationErrors: true }
 });
 
 // shorten url endpoint
