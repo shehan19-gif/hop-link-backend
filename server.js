@@ -33,7 +33,7 @@ app.use(cors({
 
 // connect to db
 
-mongoose.connect(process.env.MONGODB, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
