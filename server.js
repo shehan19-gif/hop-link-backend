@@ -34,7 +34,17 @@ app.use(cors());
 
 // connect to db
 
-mongoose.connect(process.env.MONGODB_URI, { serverApi: { version: '1', strict: true, deprecationErrors: true } });
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverApi: {
+        version: '1',
+        strict: true,
+        deprecationErrors: true
+    }
+})
+.then(() => console.log('MongoDB connected successfully'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 // shorten url endpoint
 
